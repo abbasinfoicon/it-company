@@ -33,13 +33,12 @@ export const POST = async (req) => {
 
         const byteData = await file.arrayBuffer();
         const buffer = Buffer.from(byteData);
-        const path = `./public/assets/img/uploads/${file.name}`;
+        const path = `./public/assets/img/uploads/register/${file.name}`;
         await writeFile(path, buffer);
-        const imgName = file.name;
-        console.log("img-name:", imgName)
+        const Imgpath = `/assets/img/uploads/register/${file.name}`;
 
         const hashPassword = await bcrypt.hash(password, 5);
-        const newUser = new regModel({ name, email, phone, password: hashPassword, gender, dob, image: file.name });
+        const newUser = new regModel({ name, email, phone, password: hashPassword, gender, dob, image: Imgpath });
         await newUser.save();
 
         return NextResponse.json({ status: 200, message: 'User is Registered!!' });

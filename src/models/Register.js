@@ -9,6 +9,7 @@ const regSchema = new mongoose.Schema({
     gender: { type: String, required: true },
     dob: { type: Date, required: true },
     image: { type: String },
+    token: { type: String }
 },
     {
         timestamps: true,

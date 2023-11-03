@@ -7,7 +7,7 @@ const Breadcrumbs = ({ name, title }) => {
             <h3>{title}</h3>
             <ul>
                 <li>
-                    <Link href="/">Home</Link>
+                    <Link href="/dashboard">Home</Link>
                 </li>
                 <li>{name}</li>
             </ul>

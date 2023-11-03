@@ -32,13 +32,13 @@ const Header = () => {
   }
 
   const pathname = usePathname();
-  const validRoutes = ['/login', '/signup', '/forgot-password', '/reset-password', '/upload'];
+  const validRoutes = ['/login', '/signup', '/forgot-password', '/reset-password'];
   return (
     <div className={`${validRoutes.includes(pathname) ? 'd-none' : 'navbar navbar-expand-md header-menu-one bg-light'}`}>
       <div className="nav-bar-header-one">
         <div className="header-logo">
           <Link href="/">
-            <img src="assets/img/logo.png" alt="logo" />
+            <img src="/assets/img/logo.png" alt="logo" />
           </Link>
         </div>
         <div className="toggle-button sidebar-toggle" onClick={toggleSidebar}>
@@ -84,13 +84,13 @@ const Header = () => {
                 <span>Admin</span>
               </div>
               <div className="admin-img">
-                <img src={session.status === "authenticated" ? session.data?.user?.image : "assets/img/figure/admin.jpg"} alt="Admin" style={{ width: "40px", height: "auto" }} />
+                <img src={session.status === "authenticated" ? session.data?.user?.image : "/assets/img/figure/admin.jpg"} alt="Admin" style={{ width: "40px", height: "auto" }} />
               </div>
             </button>
 
             <div className="dropdown-menu dropdown-menu-right">
               <div className="item-header">
-                <h6 className="item-title">Steven Zone</h6>
+                <h6 className="item-title">{session.data?.user?.name}</h6>
               </div>
               <div className="item-content">
                 <ul className="settings-list">
@@ -120,7 +120,7 @@ const Header = () => {
               <div className="item-content">
                 <div className="media">
                   <div className="item-img bg-skyblue author-online">
-                    <img src="assets/img/figure/student11.png" alt="img" />
+                    <img src="/assets/img/figure/student11.png" alt="img" />
                   </div>
                   <div className="media-body space-sm">
                     <div className="item-title">
@@ -135,7 +135,7 @@ const Header = () => {
                 </div>
                 <div className="media">
                   <div className="item-img bg-yellow author-online">
-                    <img src="assets/img/figure/student12.png" alt="img" />
+                    <img src="/assets/img/figure/student12.png" alt="img" />
                   </div>
                   <div className="media-body space-sm">
                     <div className="item-title">
@@ -150,7 +150,7 @@ const Header = () => {
                 </div>
                 <div className="media">
                   <div className="item-img bg-pink">
-                    <img src="assets/img/figure/student13.png" alt="img" />
+                    <img src="/assets/img/figure/student13.png" alt="img" />
                   </div>
                   <div className="media-body space-sm">
                     <div className="item-title">
@@ -165,7 +165,7 @@ const Header = () => {
                 </div>
                 <div className="media">
                   <div className="item-img bg-violet-blue">
-                    <img src="assets/img/figure/student11.png" alt="img" />
+                    <img src="/assets/img/figure/student11.png" alt="img" />
                   </div>
                   <div className="media-body space-sm">
                     <div className="item-title">

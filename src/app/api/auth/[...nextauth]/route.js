@@ -1,6 +1,7 @@
 import NextAuth from "next-auth"
 import GoogleProvider from "next-auth/providers/google";
 import GitHubProvider from "next-auth/providers/github";
+import FacebookProvider from "next-auth/providers/facebook";
 import CredentialsProvider from "next-auth/providers/credentials"
 
 import ConnectDB from '@/config/db'
@@ -14,7 +15,7 @@ const handler = NextAuth({
             name: "credentials",
             credentials: {},
 
-            async authorize(credentials) {
+            async authorize(credentials, req) {
                 const { email, password } = credentials;
 
                 try {
@@ -24,10 +25,10 @@ const handler = NextAuth({
                     if (!user || !passwordMatch) {
                         return null;
                     }
-
-                    return user;
+                    return user;                   
                 } catch (error) {
-                    console.log("Error", error)
+                    console.error("Error", error);
+                    return null;
                 }
             }
         }),
@@ -38,6 +39,10 @@ const handler = NextAuth({
         GitHubProvider({
             clientId: process.env.GITHUB_ID,
             clientSecret: process.env.GITHUB_SECRET
+        }),
+        FacebookProvider({
+            clientId: process.env.FACEBOOK_CLIENT_ID,
+            clientSecret: process.env.FACEBOOK_CLIENT_SECRET
         })
     ],
     session: {

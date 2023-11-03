@@ -47,7 +47,7 @@ const Signup = () => {
             }
 
         } catch (error) {
-            console.log("Register not added !!!", error)
+            console.error("Register not added !!!", error)
         }
 
         setData({ name: "", email: "", phone: "", password: "", dob: "", gender: "", image: e.target.reset(), });

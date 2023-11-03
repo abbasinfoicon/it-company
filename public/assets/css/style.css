@@ -1764,6 +1764,12 @@ ul {
 
 .copyright {
   color: #707070;
+  position: fixed;
+  bottom: 0;
+  left: 26rem;
+  padding: 20px 30px;
+  background: #fff;
+  width: calc(100vw - 27rem);
 }
 
 @media only screen and (max-width: 767px) {
@@ -2531,6 +2537,7 @@ ul {
 /*=============== 5.5 Sidebar Menu ==================*/
 .sidebar-menu-one {
   width: 26rem;
+  min-width: 26rem;
   position: fixed;
   top: 0;
   bottom: 0;
@@ -2832,6 +2839,7 @@ ul {
 
 .sidebar-collapsed .sidebar-menu-one {
   width: 8rem;
+  min-width: 8rem;
 }
 
 .sidebar-collapsed .sidebar-menu-one .sidebar-menu-content .sidebar-menu-header .sidebar-logo {
@@ -3019,6 +3027,13 @@ ul {
 .new-added-form .form-group .form-control {
   background-color: #f0f1f3;
   height: 50px;
+}
+
+.new-added-form .form-group .select-control {
+  -webkit-appearance: none;
+  background: url(../img/select-arrow.png) #f0f1f3;
+  background-repeat: no-repeat;
+  background-position: top 19px right 15px;
 }
 
 .new-added-form .form-group i {
@@ -4156,17 +4171,17 @@ ul {
 .login-page-content .login-box .login-form .form-group .form-check .form-check-label {
   cursor: pointer;
   font-size: 14px;
-  padding-left: 30px;
+  padding-left: 25px;
   font-weight: 500;
   color: #444444;
 }
 
 .login-page-content .login-box .login-form .form-group .form-check .form-check-label:before {
-  top: 1px;
+  top: 3px;
 }
 
 .login-page-content .login-box .login-form .form-group .form-check .form-check-label:after {
-  top: 2px;
+  top: 3px;
 }
 
 .login-page-content .login-box .login-form .form-group .forgot-btn {
@@ -4266,6 +4281,11 @@ ul {
   background-color: #ffaa01;
 }
 
+.login-page-content .login-box .login-social ul li button:focus {
+  outline: none;
+  box-shadow: none;
+}
+
 .login-page-content .sign-up {
   color: #ffffff;
 }
@@ -4308,7 +4328,7 @@ ul {
   -webkit-box-direction: normal;
   -ms-flex-direction: column;
   flex-direction: column;
-  padding: 0 30px;
+  padding: 0 30px 70px;
 }
 
 @media only screen and (max-width: 767px) {

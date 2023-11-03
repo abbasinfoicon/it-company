@@ -7,7 +7,7 @@ const Sidebar = () => {
     const [isActive, setIsActive] = useState('');
 
     const pathname = usePathname();
-    const validRoutes = ['/login', '/signup', '/forgot-password', '/reset-password', '/upload'];
+    const validRoutes = ['/login', '/signup', '/forgot-password', '/reset-password'];
 
     const handleClick = (event) => {
         setIsActive(event.currentTarget.id);
@@ -17,46 +17,32 @@ const Sidebar = () => {
         <div className={`${validRoutes.includes(pathname) ? 'd-none' : 'sidebar-main sidebar-menu-one sidebar-expand-md sidebar-color'}`}>
             <div className="mobile-sidebar-header d-md-none">
                 <div className="header-logo">
-                    <Link href="/"><img src="assets/img/logo1.png" alt="logo" /></Link>
+                    <Link href="/"><img src="/assets/img/logo1.png" alt="logo" /></Link>
                 </div>
             </div>
 
             <div className="sidebar-menu-content">
                 <ul className="nav nav-sidebar-menu sidebar-toggle-view">
-                    <li className={`nav-item sidebar-nav-item ${isActive === "1" ? 'active' : ''}`} id="1" onClick={handleClick}>
-                        <Link href="#" className="nav-link"><i className="flaticon-dashboard"></i><span>Dashboard</span></Link>
-                        <ul className="nav sub-group-menu">
-                            <li className="nav-item">
-                                <Link href="/" className="nav-link"><i className="fas fa-angle-right"></i>Admin</Link>
-                            </li>
-                            <li className="nav-item">
-                                <Link href="index3" className="nav-link"><i className="fas fa-angle-right"></i>Students</Link>
-                            </li>
-                            <li className="nav-item">
-                                <Link href="index4" className="nav-link"><i className="fas fa-angle-right"></i>Parents</Link>
-                            </li>
-                            <li className="nav-item">
-                                <Link href="index5" className="nav-link"><i className="fas fa-angle-right"></i>Teachers</Link>
-                            </li>
-                        </ul>
+                    <li className="nav-item">
+                        <Link href="/dashboard" className="nav-link"><i className="flaticon-dashboard"></i><span>Dashboard</span></Link>
                     </li>
                     <li className={`nav-item sidebar-nav-item ${isActive === "2" ? 'active' : ''}`} id="2" onClick={handleClick}>
                         <Link href="#" className="nav-link"><i className="flaticon-classmates"></i><span>Students</span></Link>
                         <ul className="nav sub-group-menu">
                             <li className="nav-item">
-                                <Link href="all-student" className="nav-link"><i className="fas fa-angle-right"></i>All
+                                <Link href="/student" className="nav-link"><i className="fas fa-angle-right"></i>All
                                     Students</Link>
                             </li>
                             <li className="nav-item">
-                                <Link href="student-details" className="nav-link"><i className="fas fa-angle-right"></i>Student
+                                <Link href="/student/name" className="nav-link"><i className="fas fa-angle-right"></i>Student
                                     Details</Link>
                             </li>
                             <li className="nav-item">
-                                <Link href="admit-form" className="nav-link"><i className="fas fa-angle-right"></i>Admission
+                                <Link href="/student/add-student" className="nav-link"><i className="fas fa-angle-right"></i>Admission
                                     Form</Link>
                             </li>
                             <li className="nav-item">
-                                <Link href="student-promotion" className="nav-link"><i className="fas fa-angle-right"></i>Student
+                                <Link href="/student/student-promotion" className="nav-link"><i className="fas fa-angle-right"></i>Student
                                     Promotion</Link>
                             </li>
                         </ul>
